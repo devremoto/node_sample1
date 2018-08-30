@@ -1,0 +1,37 @@
+<html>
+    <style>
+        body,td, th{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10pt
+        }
+        table{
+            border:1px black solid; border-collapse: collapse
+        }
+        td{
+            border:1px black solid; border-collapse: collapse
+        }
+        th{
+            text-transform: uppercase
+        }
+    </style>
+    <body>
+        <% if(livros && livros.length>0){%>
+        <table cellspacing=0 cellpadding=5 >
+            <tr>
+                <th>id</th>
+                <th>título</th>
+                <th>descrição</th>
+                <th>preço</th>
+            </tr>    
+            <% for(let livro of livros) {%>
+                    <tr>
+                        <td><%= livro.id %></td>
+                        <td><%= livro.titulo %></td>
+                        <td><%= livro.preco %></td>
+                        <td><%= livro.descricao%></td>
+                    </tr>
+             <% } %>   
+        </table>
+        <% } %>  
+    </body>
+</html>
