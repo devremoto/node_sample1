@@ -1,0 +1,31 @@
+name: ECS Task Launcher Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      
+concurrency: 
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  ecs-task-launcher-deploy-dev:
+    name: ECS Task Launcher Deploy to DEV
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check out Code
+        uses: ./action.yaml
+        with: 
+          lambda:"a,b,c"
+      
