@@ -25,7 +25,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check out Code
-        uses: ./action.yaml
+        uses: ./action.yml
         with: 
           lambda:"a,b,c"
       
