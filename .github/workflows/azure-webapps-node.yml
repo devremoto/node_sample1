@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check out Code
-        uses: ./action.yml
+        uses: ./github/workflows/action.yml
         with: 
           lambdas: "a,b,c"
       
