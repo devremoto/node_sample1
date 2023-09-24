@@ -20,9 +20,13 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
-      - name: Deploy lambdas
-        uses: ./.github/workflows/action.yml
-        with: 
-          lambdas: "a,b,c"
+          
+      - name: deploy
+        shell: bash
+        run: |
+          lambda_names=("lambda1" "lambda2" "lambda3") 
+          for lambda_name in "${lambda_names[@]}"; do
+            echo "Deploying Lambda: $lambda_name"
+            # Your Lambda deployment logic here
+          done
       
