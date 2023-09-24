@@ -19,7 +19,7 @@ jobs:
       - name: deploy
         shell: bash
         run: |
-          IFS=',' read -ra lambda_names <<< "${{env.INPUT_LAMBDAS}}" \    
+          IFS=',' read -ra lambda_names <<< "${{env.INPUT_LAMBDAS}}" 
           for lambda_name in "${lambda_names[@]}"; do
             echo "Deploying Lambda: $lambda_name"
             # Your Lambda deployment logic here
