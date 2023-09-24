@@ -9,12 +9,14 @@ inputs:
 env:
       INPUT_LAMBDAS: ${{ inputs.lambdas }}
 runs:
-  using: composite
-  shell: bash
-  run: |
-  IFS=',' read -ra lambda_names <<< "$INPUT_LAMBDAS"
-
-  for lambda_name in "${lambda_names[@]}"; do
-    echo "Deploying Lambda: $lambda_name"
-    # Your Lambda deployment logic here
-  done
+  using: composite  
+  steps:
+    - name: deploy
+      shell: bash
+      run: |
+      IFS=',' read -ra lambda_names <<< "${{env.INPUT_LAMBDAS}}"
+    
+      for lambda_name in "${lambda_names[@]}"; do
+        echo "Deploying Lambda: $lambda_name"
+        # Your Lambda deployment logic here
+      done
