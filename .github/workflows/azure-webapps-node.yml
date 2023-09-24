@@ -1,10 +1,7 @@
 name: ECS Task Launcher Deploy
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_dispatch
       
 concurrency: 
   group: ${{ github.workflow }}
