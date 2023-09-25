@@ -12,8 +12,8 @@ permissions:
   contents: read
 
 jobs:
-  ecs-task-launcher-deploy-dev:
-    name: ECS Task Launcher Deploy to DEV
+  poc-loop:
+    name: POC to test loop in shell
     runs-on: ubuntu-latest
     steps:
       - name: Check out Code
