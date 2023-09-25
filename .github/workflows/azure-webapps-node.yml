@@ -1,4 +1,4 @@
-name: ECS Task Launcher Deploy
+name: POC to test loop in shell
 
 on:
   workflow_dispatch
