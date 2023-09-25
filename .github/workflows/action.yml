@@ -11,9 +11,9 @@ inputs:
 env:
       INPUT_LAMBDAS: ${{ inputs.lambdas }}
 
-jobs:
+runs:
   deploy-lambdas:
-    name: ECS Task Launcher Deploy to DEV
+    name: test loop
     runs-on: ubuntu-latest
     steps:
       - name: deploy
